@@ -2,34 +2,42 @@
 
 ## Project Summary
 
-In this project you will build and explain a small music recommender system.
-
-Your goal is to:
-
-- Represent songs and a user "taste profile" as data
-- Design a scoring rule that turns that data into recommendations
-- Evaluate what your system gets right and wrong
-- Reflect on how this mirrors real world AI recommenders
-
-Replace this paragraph with your own summary of what your version does.
-
+This project simulates a simplified content-based music recommender, similar
+in spirit to how platforms like Spotify suggest songs — but using only a
+song's own attributes (genre, mood, energy) rather than other users'
+listening behavior. A user "taste profile" is compared against a small song
+catalog, each song is scored for how well it matches, and the top-ranked
+results are returned as recommendations
 ---
 
 ## How The System Works
 
-Explain your design in plain language.
+Each `Song` in this system has the following features:
+- **genre** — e.g. pop, rock, lofi
+- **mood** — e.g. happy, intense, calm
+- **energy** — a 0.0-1.0 scale representing intensity
+- **tempo_bpm** — beats per minute
 
-Some prompts to answer:
+A `UserProfile` stores target preferences for these same fields:
+- **favorite_genre**
+- **favorite_mood**
+- **target_energy**
 
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
+The `Recommender` scores each song against the user profile using a
+weighted rule:
+- +2.0 points if the song's genre matches the user's favorite genre
+- +1.0 point if the song's mood matches the user's favorite mood
+- Up to +2.0 points based on how *close* the song's energy is to the
+  user's target energy (closer = more points, not just "higher energy")
 
-You can include a simple diagram or bullet list if helpful.
+Every song in the catalog is scored this way, then the list is sorted from
+highest to lowest score. The top K songs are returned as the final
+recommendations, along with a plain-language list of "reasons" explaining
+why each song scored the way it did (e.g. "genre match (+2.0)").
 
----
+This mirrors real systems in a simplified way: real recommenders also
+turn raw attributes into scores and rank across a catalog — just with far
+more features and far more users' behavior data feeding in.
 
 ## Getting Started
 
