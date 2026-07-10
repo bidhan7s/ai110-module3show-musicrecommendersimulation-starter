@@ -8,6 +8,19 @@ song's own attributes (genre, mood, energy) rather than other users'
 listening behavior. A user "taste profile" is compared against a small song
 catalog, each song is scored for how well it matches, and the top-ranked
 results are returned as recommendations.
+Real-world recommenders like Spotify or YouTube typically combine two
+approaches. **Collaborative filtering** looks at other users' behavior —
+if you and another listener both liked the same songs before, it
+recommends what that other listener enjoyed, even if the songs don't
+share obvious attributes. **Content-based filtering** (what this project
+simulates) instead looks at a song's own attributes — genre, mood, tempo,
+energy — and matches those against a user's stated or inferred
+preferences. Real systems also track behavior signals like skips, saves,
+replays, and listening duration to build a taste profile automatically,
+rather than asking the user to state their preferences directly. This
+simulation simplifies that: it uses only song attributes and a
+manually-defined user profile, with no behavior tracking or
+other-user data involved.
 
 ---
 
@@ -156,6 +169,17 @@ high-energy "sad" rock song anywhere in the catalog to take its place.
 This showed me the issue wasn't purely the weighting formula — it was
 also a data coverage gap. Reweighting fixed *how much* a wrong-mood song
 was penalized, but couldn't produce a better option that didn't exist.
+
+Comparing the three standard profiles side by side: **High-Energy Pop**
+consistently surfaced pop/happy tracks with high energy (Sunrise City,
+Rooftop Lights), staying tightly within genre and mood matches. **Chill
+Lofi** shifted completely to low-energy lofi/ambient tracks (Library
+Rain, Focus Flow, Midnight Coding), never surfacing anything above ~0.4
+energy. **Deep Intense Rock** locked onto rock/intense tracks (Storm
+Runner, Midnight Cipher), even though "intense" and "happy" moods are
+conceptually unrelated to genre. This confirms that genre and mood act
+as strong gates on which songs even get considered — energy closeness
+alone rarely overrides a genre/mood mismatch when both are absent.
 
 ---
 
