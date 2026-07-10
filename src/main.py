@@ -2,7 +2,7 @@
 Command line runner for the Music Recommender Simulation.
 """
 
-from recommender import load_songs, recommend_songs
+from src.recommender import load_songs, recommend_songs
 
 
 PROFILES = {
@@ -23,7 +23,7 @@ def print_recommendations(profile_name, user_prefs, songs, k=5):
 
 
 def main() -> None:
-    songs = load_songs("data/songs.csv")
+    songs = load_songs("./data/songs.csv")
     print(f"Loaded songs: {len(songs)}")
 
     for name, prefs in PROFILES.items():
