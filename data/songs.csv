@@ -9,3 +9,12 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
 8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22
 9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78
 10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35
+11,Midnight Cipher,Street Cipher,hip-hop,intense,0.85,98,0.45,0.81,0.15
+12,Velvet Nights,Sienna Cole,soul,romantic,0.60,94,0.75,0.72,0.68
+13,Neon Rush,Synth Masters,electronic,upbeat,0.95,130,0.88,0.92,0.05
+14,Autumn Farewell,Wooden Hearts,folk,melancholic,0.35,75,0.42,0.50,0.85
+15,Thunder Forge,Iron Wolves,metal,aggressive,0.94,152,0.38,0.45,0.08
+16,Island Breeze,Sunset Vibes,reggae,laid-back,0.48,92,0.72,0.75,0.78
+17,Moonlight Meditation,Chamber Orchestra,classical,peaceful,0.28,60,0.68,0.35,0.95
+18,Fuego Tropical,Luna Fuerte,latin,energetic,0.87,96,0.81,0.88,0.25
+
